@@ -50,14 +50,17 @@ class BudgetStudent extends Student{
   
 
   getScholarship(){
-    if(this.getAverageMark() >= 4 && this.isDismiss === false){
+    const number = 4;
+    if(this.getAverageMark() >= number && this.isDismiss === false){
       console.log(`Ви отримали 1400 грн`);
     }
     else{
       console.log(`Стипендії немає :с`);
     }
   }
-
+scholarshipInterval() {
+    setInterval(() => {this.getScholarship();}30000);
+}
 }
 const anastasiia = new BudgetStudent('Студентка 5 курсу', 'ЛНУ ім. І.Франка', 'Михальчук Анастасія');
 console.log(anastasiia.getInfo());
