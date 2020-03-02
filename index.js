@@ -60,7 +60,7 @@ class BudgetStudent extends Student{
   }
 scholarshipInterval() {
     setInterval(() => {(this.getScholarship(),30000);
-}
+)}
 }
 const anastasiia = new BudgetStudent('Студентка 5 курсу', 'ЛНУ ім. І.Франка', 'Михальчук Анастасія');
 console.log(anastasiia.getInfo());
