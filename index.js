@@ -60,7 +60,7 @@ class BudgetStudent extends Student{
   }
 scholarshipInterval() {
     setInterval(() => {(this.getScholarship(),30000);
-  }
+  })
  }
 
 
