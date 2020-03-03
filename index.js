@@ -44,27 +44,28 @@ ostapBender.recoverStudent();
 console.log(ostapBender.marks);
 
 //Advanced
-class BudgetStudent extends Student{
-    marksArr =  [5, 5, 5, 4,4];
-    isDismiss = false;
-  
 
+ class BudgetStudent extends Student{
+  constructor(...data){
+    super(...data);
+    this.scholarshipInterval();
+  }
+  
   getScholarship(){
     const number = 4;
-    if(this.getAverageMark() >= number && this.isDismiss === false){
-      console.log(`Ви отримали 1400 грн`);
-    }
-    else{
-      console.log(`Стипендії немає :с`);
+    if(this.getAverageMark() >= number && this.dismiss == false){
+      console.log(`Ви отримали стипенію 1400грн`);
+    }else{
+      console.log(`Ви нічого не отримали`);
     }
   }
-scholarshipInterval() {
-    setInterval(() => {(this.getScholarship(),30000);
-  })
- }
+  scholarshipInterval(){
+    setInterval(() => {this.getScholarship();},30000);
+  }
+}
 
 
-const anastasiia = new BudgetStudent('Студентка 5 курсу', 'ЛНУ ім. І.Франка', 'Михальчук Анастасія');
+const anastasiia = new BudgetStudent(`Студентка 5 курсу', 'ЛНУ ім. І.Франка', 'Михальчук Анастасія`);
 console.log(anastasiia.getInfo());
 
 console.log(anastasiia.getScholarship());
